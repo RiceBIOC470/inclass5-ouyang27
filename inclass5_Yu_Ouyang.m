@@ -1,3 +1,5 @@
+%AW: see comments below. 0.7/1.
+
 %Inclass assignment 5. 
 
 % 1. (a) Write a function that reads in an image and displays it so that 1%
@@ -8,7 +10,12 @@ new_img1 = black_white1(I)
 % (b) Write a second function where the fraction of pixels to display as
 % black or white are equal and can be specified as a second input to this
 % function. 
+%AW: Your functions don't work as expected. increases the amount of black and white pixels should increase
+% the contrast, not decrease it. Your function does teh opposite. Should have been:
+   % J = imadjust(img, stretchlim(img, [b, 1-b]));
+   %-0.2.
 
+% 
 new_img2 = black_white(I,0.5)
 
 %(c) Redo part (b) but make the option to specify the fraction
@@ -23,3 +30,4 @@ new_img2 = black_white(I)
 %builtin MATLAB function for this. 
 DNA_seq = 'ATGC';
 result = complement(DNA_seq)
+%AW: Your function complements but does not reverse. -0.1. 
